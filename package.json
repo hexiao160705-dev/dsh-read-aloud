@@ -1,0 +1,50 @@
+{
+  "name": "dsh-read-aloud",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Read assistant replies aloud in DeepSeek Harness with Edge TTS and adjustable 1x-4x playback.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh",
+    "tts",
+    "read-aloud",
+    "speech",
+    "accessibility"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "index.js",
+    "client.js",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": false
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "icon": "./icon.svg",
+  "homepage": "https://github.com/hexiao160705-dev/dsh-read-aloud#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexiao160705-dev/dsh-read-aloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hexiao160705-dev/dsh-read-aloud/issues"
+  }
+}
