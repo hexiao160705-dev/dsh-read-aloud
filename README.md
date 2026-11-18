@@ -1,4 +1,12 @@
-# dsh-read-aloud
+# dsh-read-aloud (renamed)
+
+> **This repository is superseded.** The plugin was renamed to **`dsh-read-aloud-edge`** because the name `dsh-read-aloud` is already taken on npm by an unrelated plugin.
+>
+> Use https://github.com/hexiao160705-dev/dsh-read-aloud-edge instead:
+>
+> ```bash
+> dsh plugin --profile desktop add github:hexiao160705-dev/dsh-read-aloud-edge
+> ```
 
 Read assistant replies aloud in **DeepSeek Harness (DSH)**, with **1×–4×** playback speed.
 
@@ -26,33 +34,12 @@ pip install edge-tts
 uv tool install edge-tts
 ```
 
-## Install the plugin
-
-```bash
-dsh plugin --profile desktop add github:hexiao160705-dev/dsh-read-aloud
-```
-
-Or from a checkout:
-
-```bash
-dsh plugin --profile desktop add /absolute/path/to/dsh-read-aloud
-```
-
-Reload/restart DSH. A speaker icon appears in the action row of each assistant reply.
-
 ## Privacy
 
 - The host reads the text from the request, synthesizes it through `edge-tts`, and returns only a cache id + audio URL.
 - No API key, account id, or token is read or sent.
 - `edge-tts` sends the text to Microsoft's online TTS service; the audio is cached locally. If the reply must not leave the machine, do not use this plugin (a local TTS engine would be needed).
 - Cache files stay under `~/.dsh/read-aloud/cache/`; delete that directory to clear them.
-
-## Limitations
-
-- Edge TTS is an online service and may be unavailable or rate-limited.
-- Very long replies are truncated to 8,000 characters per synthesis.
-- Speed changes use HTML audio playback rate; at 4× the result is fast but pitch-preserved.
-- The reply text is located from the rendered chat row; if DSH changes its DOM attributes, the button falls back to the current text selection.
 
 ## License
 
